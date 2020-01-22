@@ -1,5 +1,6 @@
 {
-  "description": "",
+  "name": "netflex/foundation",
+  "description": "Netflex Foundation library",
   "type": "library",
   "license": "MIT",
   "keywords": [],
@@ -10,6 +11,23 @@
     "sort-packages": true
   },
   "require": {
-    "php": "^7.3"
+    "php": "^7.3",
+    "netflex/api": "^3.0",
+    "netflex/support": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Netflex\\Foundation\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "require-dev": {
+    "illuminate/cache": "^6.12",
+    "illuminate/container": "^6.12",
+    "illuminate/filesystem": "^6.12",
+    "larapack/dd": "^1.1",
+    "vlucas/phpdotenv": "^3.6"
   }
 }
