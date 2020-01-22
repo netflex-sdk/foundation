@@ -26,6 +26,8 @@
   "require-dev": {
     "illuminate/cache": "^6.12",
     "illuminate/container": "^6.12",
-    "illuminate/filesystem": "^6.12"
+    "illuminate/filesystem": "^6.12",
+    "larapack/dd": "^1.1",
+    "vlucas/phpdotenv": "^3.6"
   }
 }
