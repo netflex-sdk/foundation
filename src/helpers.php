@@ -1,31 +1,31 @@
 <?php
 
-use Netflex\Foundation\Setting;
-use Netflex\Foundation\StaticContent;
+use Netflex\Foundation\Variable;
+use Netflex\Foundation\GlobalContent;
 
-if (!function_exists('get_setting')) {
+if (!function_exists('variable')) {
   /**
-   * Retrieve the value of a setting
+   * Retrieve the value of a variable
    *
    * @param string $key
    * @return mixed
    */
-  function get_setting($key)
+  function variable($key)
   {
-    return Setting::get($key);
+    return Variable::get($key);
   }
 }
 
-if (!function_exists('static_content')) {
+if (!function_exists('global_content')) {
   /**
    * @param string $block
    * @param string $area
    * @param string $field
    * @return mixed|void
    */
-  function static_content($block, $area = null, $field = null)
+  function global_content($block, $area = null, $field = null)
   {
-    $static = StaticContent::retrieve($block);
+    $static = GlobalContent::retrieve($block);
 
     if (!$area) {
       return $static;

@@ -9,7 +9,7 @@ use Netflex\Support\ReactiveObject;
 
 use Illuminate\Support\Facades\Cache;
 
-class Setting extends ReactiveObject
+class Variable extends ReactiveObject
 {
   use Retrievable;
 
