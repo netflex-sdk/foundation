@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Cache;
  * @property bool $active
  * @property Collection $globals
  */
-class StaticContent extends ReactiveObject
+class GlobalContent extends ReactiveObject
 {
   /**
    * @param array $content
