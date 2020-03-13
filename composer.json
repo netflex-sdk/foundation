@@ -12,8 +12,8 @@
   },
   "require": {
     "php": "^7.3",
-    "netflex/api": "^2.0.0-RC2",
-    "netflex/support": "^2.0.0-RC2"
+    "netflex/api": "^2.0",
+    "netflex/support": "^2.0"
   },
   "autoload": {
     "psr-4": {
@@ -23,6 +23,8 @@
       "src/helpers.php"
     ]
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require-dev": {
     "illuminate/cache": "^7.0",
     "illuminate/container": "^7.0",
