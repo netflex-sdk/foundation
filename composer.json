@@ -12,6 +12,7 @@
   },
   "require": {
     "php": "^7.3",
+    "illuminate/translation": "^7.0",
     "netflex/api": "^2.0",
     "netflex/support": "^2.0"
   },
@@ -31,5 +32,12 @@
     "illuminate/filesystem": "^7.0",
     "larapack/dd": "^1.1",
     "vlucas/phpdotenv": "^3.6"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Netflex\\Foundation\\Providers\\TranslationServiceProvider"
+      ]
+    }
   }
 }
