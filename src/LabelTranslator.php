@@ -2,6 +2,8 @@
 
 namespace Netflex\Foundation;
 
+use Exception;
+
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Translation\Translator;
 use Netflex\API\Facades\API;
@@ -53,12 +55,15 @@ class LabelTranslator extends Translator
     }
 
     if (!isset($line)) {
-      Cache::forget('labels');
-      dd(API::post('foundation/labels', [
-        'label' => $key
-      ]));
-      Label::all();
-      dd('hei');
+      try {
+        API::post('foundation/labels', [
+            'label' => base64_encode($key)
+        ]);
+        Cache::forget('labels');
+        Label::all();
+      } catch (Exception $e) {
+        return $this->makeReplacements($line ?: $key, $replace);
+      }
     }
 
     // If the line doesn't exist, we will return back the key which was requested as
