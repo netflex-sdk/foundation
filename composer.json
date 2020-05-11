@@ -24,8 +24,6 @@
       "src/helpers.php"
     ]
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require-dev": {
     "illuminate/cache": "^7.0",
     "illuminate/container": "^7.0",
