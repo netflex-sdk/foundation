@@ -24,14 +24,12 @@
       "src/helpers.php"
     ]
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require-dev": {
     "illuminate/cache": "^8.0",
     "illuminate/container": "^8.0",
     "illuminate/filesystem": "^8.0",
     "larapack/dd": "^1.1",
-    "vlucas/phpdotenv": "^3.6"
+    "vlucas/phpdotenv": "^4.0"
   },
   "extra": {
     "laravel": {
