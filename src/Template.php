@@ -35,6 +35,16 @@ class Template extends ReactiveObject implements Responsable
   }
 
   /**
+   * @param string|null $alias 
+   * @return string|null
+   */
+  public function getAliasAttribute ($alias) {
+    if ($alias) {
+      return str_replace('/', '.', $alias);
+    }
+  }
+
+  /**
    * Create an HTTP response that represents the object.
    *
    * @param array $variables
