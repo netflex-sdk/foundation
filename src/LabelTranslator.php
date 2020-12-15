@@ -23,6 +23,14 @@ class LabelTranslator extends Translator
   {
     $locale = $locale ?: $this->locale;
 
+    $matches = [];
+    if (preg_match('/validation\.values\.([\w-]+)\.(.+)/', $key, $matches)) {
+      $key = "validation.values.{$matches[1]}.:value";
+      if (!array_key_exists('value', $replace)) {
+        $replace['value'] = $matches[2];
+      }
+    }
+
     // For JSON translations, there is only one file per locale, so we will simply load
     // that file and then we will be ready to check the array for the key. These are
     // only one level deep so we do not need to do any fancy searching through it.
