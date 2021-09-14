@@ -7,6 +7,8 @@ use Netflex\API\Facades\API;
 use Netflex\Support\Retrievable;
 use Netflex\Support\ReactiveObject;
 
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 
 class Variable extends ReactiveObject
@@ -51,7 +53,7 @@ class Variable extends ReactiveObject
   }
 
   /**
-   * @return static[]
+   * @return Collection|static[]
    */
   public static function all()
   {
@@ -70,8 +72,12 @@ class Variable extends ReactiveObject
    */
   public static function retrieve($alias)
   {
-    return static::all()->first(function ($content) use ($alias) {
-      return $content->alias === $alias;
-    });
+    if (App::isBooted()) {
+      return static::all()->first(function ($content) use ($alias) {
+        return $content->alias === $alias;
+      });
+    }
+
+    return new static(['alias' => $alias, 'value' => '#' . $alias . '#']);
   }
 }
