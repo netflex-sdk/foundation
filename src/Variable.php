@@ -10,6 +10,7 @@ use Netflex\Support\ReactiveObject;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Facade;
 
 class Variable extends ReactiveObject
 {
@@ -72,7 +73,7 @@ class Variable extends ReactiveObject
    */
   public static function retrieve($alias)
   {
-    if (App::isBooted()) {
+    if (Facade::getFacadeApplication() && App::isBooted()) {
       return static::all()->first(function ($content) use ($alias) {
         return $content->alias === $alias;
       });
