@@ -8,11 +8,12 @@ if (!function_exists('variable')) {
    * Retrieve the value of a variable
    *
    * @param string $key
+   * @param mixed $fallback = null
    * @return mixed
    */
-  function variable($key)
+  function variable($key, $fallback = null)
   {
-    return Variable::get($key);
+    return Variable::get($key, $fallback);
   }
 }
 
