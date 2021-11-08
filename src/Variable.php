@@ -25,12 +25,13 @@ class Variable extends ReactiveObject
    * Retrieve the value of a Setting
    *
    * @param string $key
+   * @param mixed $fallback = null
    * @return mixed
    */
-  public static function get($key)
+  public static function get($key, $fallback = null)
   {
     $setting = static::retrieve($key);
-    return $setting ? $setting->value : null;
+    return $setting ? $setting->value : $fallback;
   }
 
   /**
