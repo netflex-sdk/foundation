@@ -853,6 +853,7 @@ class PKPass implements Responsable, JsonSerializable, Jsonable, PKPassRepresent
         return $data;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->payload();
